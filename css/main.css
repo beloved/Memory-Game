@@ -1,0 +1,129 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#game-board {
+
+    width: 700px;
+    height: 700px;
+    background: url(../img/background.jpg) center center no-repeat;
+    /*background-color: #00CCCC;*/
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+.game-card {
+
+    width: 150px;
+    height: 150px;
+    /*background-color: lightgrey;*/
+    background: seashell url(../img/cardback.png) center center no-repeat;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+ .game-card.open {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+}
+
+.game-card.show {
+    background: seashell url(../img/shell_0007_Layer-8.png) center center no-repeat;
+}
+
+.shell-1 {
+    background: seashell url(../img/shell_0000_Layer-1.png) center center no-repeat;
+}
+
+.shell-2 {
+    background: seashell url(../img/shell_0001_Layer-2.png) center center no-repeat;
+}
+
+.shell-3 {
+    background: seashell url(../img/shell_0002_Layer-3.png) center center no-repeat;
+}
+
+
+.shell-4 {
+    background: seashell url(../img/shell_0003_Layer-4.png) center center no-repeat;
+}
+
+.shell-5 {
+    background: seashell url(../img/shell_0004_Layer-5.png) center center no-repeat;
+}
+
+.shell-6 {
+    background: seashell url(../img/shell_0005_Layer-6.png) center center no-repeat;
+}
+
+.shell-7 {
+    background: seashell url(../img/shell_0006_Layer-7.png) center center no-repeat;
+}
+
+.shell-8 {
+    background: seashell url(../img/shell_0007_Layer-8.png) center center no-repeat;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
