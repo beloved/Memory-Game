@@ -17,7 +17,6 @@ body {
 }
 
 body {
-    /*background: #ffffff url('../img/geometry2.png'); !* Background pattern from Subtle Patterns *!*/
     font-family: 'Coda', cursive;
 }
 
@@ -32,7 +31,6 @@ body {
     width: 700px;
     height: 700px;
     background: url(../img/background.jpg) center center no-repeat;
-    /*background-color: #00CCCC;*/
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -46,7 +44,6 @@ body {
 
     width: 150px;
     height: 150px;
-    /*background-color: lightgrey;*/
     background: seashell url(../img/cardback.png) center center no-repeat;
     font-size: 0;
     color: #ffffff;

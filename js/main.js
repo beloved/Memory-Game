@@ -17,7 +17,7 @@ let imgArray = [
     src= 'img/shell8.png',
 ];
 
-const shells =[...imgArray, ...imgArray];
+const shells = [...imgArray, ...imgArray];
 
 //Shuffle shells Array
 shells.sort(()=>0.5-Math.random());
@@ -29,19 +29,16 @@ for (const card of cards) {
     card.addEventListener('click', showCard);
     card.addEventListener('click', addCard);
 }
-
+//Display clicked card
 function showCard () {
     this.classList.toggle("open");
     this.classList.toggle("show");
 }
 
+//Add clicked card to a *list* of "open" cards
 function addCard() {
     openCards.push(this);
-    //test code
-    console.log(...openCards);
 }
-
-
 
 
 // /*
