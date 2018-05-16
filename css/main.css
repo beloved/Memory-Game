@@ -17,7 +17,7 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    /*background: #ffffff url('../img/geometry2.png'); !* Background pattern from Subtle Patterns *!*/
     font-family: 'Coda', cursive;
 }
 
@@ -65,40 +65,43 @@ body {
 }
 
 .game-card.show {
-    background: seashell url(../img/shell_0007_Layer-8.png) center center no-repeat;
+    /* Test Code */
+    background: seashell url(../img/shell8.png) center center no-repeat;
 }
 
+/* Images- shell images used from https://pixabay.com/en/shell-seashell-nautilus-clam-1599178/*/
+
 .shell-1 {
-    background: seashell url(../img/shell_0000_Layer-1.png) center center no-repeat;
+    background: seashell url(../img/shell1.png) center center no-repeat;
 }
 
 .shell-2 {
-    background: seashell url(../img/shell_0001_Layer-2.png) center center no-repeat;
+    background: seashell url(../img/shell2.png) center center no-repeat;
 }
 
 .shell-3 {
-    background: seashell url(../img/shell_0002_Layer-3.png) center center no-repeat;
+    background: seashell url(../img/shell3.png) center center no-repeat;
 }
 
 
 .shell-4 {
-    background: seashell url(../img/shell_0003_Layer-4.png) center center no-repeat;
+    background: seashell url(../img/shell4.png) center center no-repeat;
 }
 
 .shell-5 {
-    background: seashell url(../img/shell_0004_Layer-5.png) center center no-repeat;
+    background: seashell url(../img/shell5.png) center center no-repeat;
 }
 
 .shell-6 {
-    background: seashell url(../img/shell_0005_Layer-6.png) center center no-repeat;
+    background: seashell url(../img/shell6.png) center center no-repeat;
 }
 
 .shell-7 {
-    background: seashell url(../img/shell_0006_Layer-7.png) center center no-repeat;
+    background: seashell url(../img/shell7.png) center center no-repeat;
 }
 
 .shell-8 {
-    background: seashell url(../img/shell_0007_Layer-8.png) center center no-repeat;
+    background: seashell url(../img/shell8.png) center center no-repeat;
 }
 
 /*

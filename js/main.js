@@ -2,28 +2,48 @@
 let card = document.getElementsByClassName('game-card');
 let cards = [...card];
 
+
+let openCards = [];
+
+//Load shell images to array- shell images used from https://pixabay.com/en/shell-seashell-nautilus-clam-1599178/
+let imgArray = [
+    src= 'img/shell1.png',
+    src= 'img/shell2.png',
+    src= 'img/shell3.png',
+    src= 'img/shell4.png',
+    src= 'img/shell5.png',
+    src= 'img/shell6.png',
+    src= 'img/shell7.png',
+    src= 'img/shell8.png',
+];
+
+const shells =[...imgArray, ...imgArray];
+
+//Shuffle shells Array
+shells.sort(()=>0.5-Math.random());
+
+
 //Add eventlistener to each card
 
 for (const card of cards) {
-    card.addEventListener('click', function () {
-        this.classList.toggle("open");
-        this.classList.toggle("show");
-    });
+    card.addEventListener('click', showCard);
+    card.addEventListener('click', addCard);
 }
 
-// //Add cards to array
-// let card = document.getElementsByClassName('card');
-// let cards = [...card];
-// let openCards = [];
-//
-// //Add eventlistener to each card
-//
-// for (const card of cards) {
-//     card.addEventListener('click', showCard);
-//     card.addEventListener('click', addCard);
-// }
-//
-//
+function showCard () {
+    this.classList.toggle("open");
+    this.classList.toggle("show");
+}
+
+function addCard() {
+    openCards.push(this);
+    //test code
+    console.log(...openCards);
+}
+
+
+
+
 // /*
 //  * Display the cards on the page
 //  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -58,13 +78,4 @@ for (const card of cards) {
 //  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
 //  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
 //  */
-//
-// function showCard () {
-//     this.classList.toggle("open");
-//     this.classList.toggle("show");
-// }
-//
-// function addCard() {
-//     openCards.push(this);
-//     console.log(...openCards);
-// }
+
