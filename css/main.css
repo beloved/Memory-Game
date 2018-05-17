@@ -62,43 +62,8 @@ body {
 }
 
 .game-card.show {
-    /* Test Code */
-    background: seashell url(../img/shell8.png) center center no-repeat;
-}
-
-/* Images- shell images used from https://pixabay.com/en/shell-seashell-nautilus-clam-1599178/*/
-
-.shell-1 {
-    background: seashell url(../img/shell1.png) center center no-repeat;
-}
-
-.shell-2 {
-    background: seashell url(../img/shell2.png) center center no-repeat;
-}
-
-.shell-3 {
-    background: seashell url(../img/shell3.png) center center no-repeat;
-}
-
-
-.shell-4 {
-    background: seashell url(../img/shell4.png) center center no-repeat;
-}
-
-.shell-5 {
-    background: seashell url(../img/shell5.png) center center no-repeat;
-}
-
-.shell-6 {
-    background: seashell url(../img/shell6.png) center center no-repeat;
-}
-
-.shell-7 {
-    background: seashell url(../img/shell7.png) center center no-repeat;
-}
-
-.shell-8 {
-    background: seashell url(../img/shell8.png) center center no-repeat;
+    background: seashell center center no-repeat;
+    background-size: contain;
 }
 
 /*
