@@ -66,10 +66,17 @@ body {
 }
 .game-card.match {
     cursor: default;
-    background: #02ccba;
-    font-size: 33px;
+    background: #CBC3BD;
 }
 
+.game-card.disabled {
+    pointer-events: none;
+
+}
+
+.hidden-card {
+    visibility: hidden;
+}
 /*
  * Styles for the Score Panel
  */
