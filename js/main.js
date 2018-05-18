@@ -1,11 +1,3 @@
-//Add cards to array
-let gameBoard = document.getElementById('game-board');
-let gameCard = document.getElementsByClassName('game-card');
-let cards = [...gameCard];
-
-
-let openCards = [];
-
 //Load shell images to array- shell images used from https://pixabay.com/en/shell-seashell-nautilus-clam-1599178/
 let imgArray = [
     '../img/shell1.png',
@@ -23,6 +15,10 @@ const shells = [...imgArray, ...imgArray];
 //Shuffle shells Array
 shells.sort(()=>0.5-Math.random());
 
+//make the game board
+let gameBoard = document.getElementById('game-board');
+
+//Function created with a lot of Mentor Support
 function makeCard (id, imageName){
     const img = document.createElement('img');
     img.src = 'img/' + imageName;
@@ -30,6 +26,7 @@ function makeCard (id, imageName){
     div.id = id;
     div.classList.add('game-card');
     div.appendChild(img);
+    img.style.visibility = 'hidden';
     return div;
 }
 
@@ -38,15 +35,20 @@ for (let i = 0; i < shells.length; i++) {
     gameBoard.appendChild(card);
 }
 
-
 //Add eventlistener to each gameCard
-
+let gameCard = document.getElementsByClassName('game-card');
+let cards = [...gameCard];
 for (const card of cards) {
     card.addEventListener('click', showCard);
     card.addEventListener('click', addCard);
 }
+
 //Display clicked gameCard
 function showCard () {
+   
+    if (this.firstChild.style.visibility == 'hidden') {
+        this.firstChild.style.visibility = 'visible';
+    }
 
     this.classList.toggle("open");
     this.classList.toggle("show");
@@ -54,34 +56,14 @@ function showCard () {
 }
 
 //Add clicked gameCard to a *list* of "open" cards
+let openCards = [];
 function addCard() {
     openCards.push(this);
+    //test code
+    console.log(...openCards);
 }
 
 
-// /*
-//  * Display the cards on the page
-//  *   - shuffle the list of cards using the provided "shuffle" method below
-//  *   - loop through each gameCard and create its HTML
-//  *   - add each gameCard's HTML to the page
-//  */
-//
-// // Shuffle function from http://stackoverflow.com/a/2450976
-// function shuffle(array) {
-//     var currentIndex = array.length, temporaryValue, randomIndex;
-//
-//     while (currentIndex !== 0) {
-//         randomIndex = Math.floor(Math.random() * currentIndex);
-//         currentIndex -= 1;
-//         temporaryValue = array[currentIndex];
-//         array[currentIndex] = array[randomIndex];
-//         array[randomIndex] = temporaryValue;
-//     }
-//
-//     return array;
-// }
-//
-//
 // /*
 //  * set up the event listener for a gameCard. If a gameCard is clicked:
 //  *  - display the gameCard's symbol (put this functionality in another function that you call from this one)

@@ -57,13 +57,17 @@ body {
 
  .game-card.open {
     transform: rotateY(0);
-    background: #02b3e4;
     cursor: default;
 }
 
 .game-card.show {
-    background: seashell center center no-repeat;
-    background-size: contain;
+    background: seashell;
+
+}
+.game-card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
 }
 
 /*
