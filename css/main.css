@@ -66,7 +66,7 @@ body {
 }
 .game-card.match {
     cursor: default;
-    background: #CBC3BD;
+    background: #D3CBC3;
 }
 
 .game-card.disabled {
@@ -104,7 +104,7 @@ body {
     margin: 0 5px 0 0;
 }
 
-.score-panel .stars li {
+.stars li {
     list-style: none;
     display: inline-block;
 }
@@ -112,4 +112,29 @@ body {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+.congrats-modal {
+    visibility: hidden;
+    position: absolute;
+    padding: 20%;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 1;
+    background-color: rgba(237,237,237,0.5);
+    /*box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.4);*/
+}
+
+.modal-content {
+    position: absolute;
+    margin: auto;
+    padding: 20px;
+    width: 60%;
+    height: 60%;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
 }

@@ -20,7 +20,7 @@ shells.sort(()=>0.5-Math.random());
 //make the game board
 let gameBoard = document.getElementById('game-board');
 
-//Function created with Mentor Examples/Support
+//Function makeCards created with Mentor Examples/Support
 function makeCard (imageName){
     const img = document.createElement('img');
     img.src = 'img/' + imageName;
@@ -42,11 +42,11 @@ let cards = [...gameCard];
 for (const card of cards) {
     card.addEventListener('click', showCard);
     card.addEventListener('click', cardsOpen);
+    //card.addEventListener('click', startTimer);
 }
 
 //Display clicked gameCard
 function showCard () {
-   
     if (this.firstChild.style.visibility === 'hidden') {
         this.firstChild.style.visibility = 'visible';
     }
@@ -72,7 +72,7 @@ function cardsOpen() {
             openCards = [];
             countMatch ++;
             if (countMatch === 8) {
-                console.log('You Win');
+                showCongrats();
             }
 
         } else {
@@ -97,14 +97,43 @@ function countMoves(){
     showMoves.innerHTML = moves;
 
     if (moves > 12 && moves < 24) {
-
         stars[2].style.visibility = 'hidden';
     }
     else if (moves > 24) {
         stars[1].style.visibility = 'hidden';
     }
+
+}
+
+//Timer
+
+
+let second = 0;
+let minute = 0;
+let timer = document.querySelector('.timer');
+
+function startTimer() {
+   // this.removeEventListener('click', startTimer);
+    setInterval(function () {
+        timer.innerHTML = `${minute} min(s) ${second} sec(s)`;
+        second++;
+        if (second === 60) {
+            minute++;
+            second = 0;
+        }
+    }, 1000);
+}
+
+// Congrats Modal
+
+let modal = document.getElementById('congrats');
+let span = document.getElementsByClassName("modal-close")[0];
+
+function showCongrats() {
+    modal.style.visibility='visible';
+    span.onclick = function() {
+        modal.style.visibility= 'hidden';
+    }
 }
 
 
-//  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
-//  */
