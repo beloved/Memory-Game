@@ -80,6 +80,16 @@ body {
 /*
  * Styles for the Score Panel
  */
+.star {
+    width: 25px;
+}
+
+.moves {
+    font-size: 2em;
+}
+.fa-repeat {
+    font-size: 1.5em;
+}
 
 .score-panel {
     text-align: left;

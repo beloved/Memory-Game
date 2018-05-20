@@ -1,3 +1,5 @@
+
+
 //Load shell images to array- shell images used from https://pixabay.com/en/shell-seashell-nautilus-clam-1599178/
 let imgArray = [
     '../img/shell1.png',
@@ -45,7 +47,7 @@ for (const card of cards) {
 //Display clicked gameCard
 function showCard () {
    
-    if (this.firstChild.style.visibility == 'hidden') {
+    if (this.firstChild.style.visibility === 'hidden') {
         this.firstChild.style.visibility = 'visible';
     }
 
@@ -57,16 +59,22 @@ function showCard () {
 
 //Add clicked gameCard to a *list* of "open" cards
 let openCards = [];
+let countMatch = 0;
 function cardsOpen() {
     openCards.push(this);
-    //test code
-    console.log(...openCards);
     if (openCards.length === 2) {
        countMoves();
         if (openCards[0].innerHTML === openCards[1].innerHTML){
+            openCards[0].classList.remove('open', 'show');
+            openCards[1].classList.remove('open', 'show');
             openCards[0].classList.toggle('match');
             openCards[1].classList.toggle('match');
             openCards = [];
+            countMatch ++;
+            if (countMatch === 8) {
+                console.log('You Win');
+            }
+
         } else {
             setTimeout(function() {
                 openCards[0].classList.remove('open', 'show', 'disabled');
@@ -82,20 +90,21 @@ function cardsOpen() {
 //Count and show moves
 let moves = 0;
 let showMoves = document.querySelector('.moves');
+let stars = document.getElementsByClassName('star');
+
 function countMoves(){
     moves++;
     showMoves.innerHTML = moves;
+
+    if (moves > 12 && moves < 24) {
+
+        stars[2].style.visibility = 'hidden';
+    }
+    else if (moves > 24) {
+        stars[1].style.visibility = 'hidden';
+    }
 }
 
-// /*
-//  * set up the event listener for a gameCard. If a gameCard is clicked:
-//  *  - display the gameCard's symbol (put this functionality in another function that you call from this one)
-//  *
-//  *  - add the gameCard to a *list* of "open" cards (put this functionality in another function that you call from this one)
-//  *  - if the list already has another gameCard, check to see if the two cards match
-//  *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
-//  *    + if the cards do not match, remove the cards from the list and hide the gameCard's symbol (put this functionality in another function that you call from this one)
-//  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
+
 //  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
 //  */
-
