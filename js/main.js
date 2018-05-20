@@ -1,6 +1,6 @@
 
 
-//Load shell images to array- shell images used from https://pixabay.com/en/shell-seashell-nautilus-clam-1599178/
+//Create shell images array - shell images used from https://pixabay.com/en/shell-seashell-nautilus-clam-1599178/
 let imgArray = [
     '../img/shell1.png',
     '../img/shell2.png',
@@ -22,13 +22,14 @@ let gameBoard = document.getElementById('game-board');
 
 //Function makeCards created with Mentor Examples/Support
 function makeCard (imageName){
-    const img = document.createElement('img');
-    img.src = 'img/' + imageName;
-    const div = document.createElement('div');
-    div.classList.add('game-card');
-    div.appendChild(img);
-    img.style.visibility = 'hidden';
-    return div;
+    const image = document.createElement('img');
+    image.src = 'img/' + imageName;
+    const cardBack = document.createElement('div');
+    cardBack.classList.add('game-card');
+    cardBack.appendChild(image);
+    image.style.visibility = 'hidden';
+    return cardBack;
+
 }
 
 for (const shell of shells) {
@@ -72,6 +73,7 @@ function cardsOpen() {
             openCards = [];
             countMatch ++;
             if (countMatch === 8) {
+                clearInterval(startTime);
                 showCongrats();
             }
 
@@ -95,6 +97,11 @@ let stars = document.getElementsByClassName('star');
 function countMoves(){
     moves++;
     showMoves.innerHTML = moves;
+    if (moves === 1) {
+        second = 0;
+        minute = 0;
+        startTimer();
+    }
 
     if (moves > 12 && moves < 24) {
         stars[2].style.visibility = 'hidden';
@@ -111,10 +118,10 @@ function countMoves(){
 let second = 0;
 let minute = 0;
 let timer = document.querySelector('.timer');
-
+let startTime;
 function startTimer() {
-   // this.removeEventListener('click', startTimer);
-    setInterval(function () {
+
+   startTime = setInterval(function () {
         timer.innerHTML = `${minute} min(s) ${second} sec(s)`;
         second++;
         if (second === 60) {
