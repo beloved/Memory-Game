@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Memory Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -19,7 +20,7 @@
         </ul>
         <span class="moves">0</span> Moves
         <span class="timer"></span>
-        <span class="restart">
+        <span onclick="location.reload()" class="restart">
             <i class="fa fa-repeat"></i>
         </span>
     </section>
@@ -30,15 +31,15 @@
     <div id="congrats" class="congrats-modal">
         <div class="modal-content">
             <span class="modal-close">X</span>
-            <h1>Congratulations</h1>
-            <h2>You Win!</h2>
+
+            <h1>You Win!</h1>
 
             <h3>Your Moves</h3>
             <span id="show-moves">0</span> Moves
             <h3>Your Time</h3>
             <div id="final-time"></div>
             <ul id="star-rating"></ul>
-            <button class="restart">Play Again</button>
+            <button onclick="location.reload()" class="restart">Play Again</button>
 
         </div>
     </div>

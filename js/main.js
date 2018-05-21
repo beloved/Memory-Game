@@ -126,11 +126,9 @@ function countMoves(){
     else if (moves > 24) {
         stars[1].style.visibility = 'hidden';
     }
-
 }
 
 //Timer
-
 
 let second = 0;
 let minute = 0;

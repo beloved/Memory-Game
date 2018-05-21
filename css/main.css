@@ -76,9 +76,8 @@ body {
 
 }
 
-/*
- * Styles for the Score Panel
- */
+/**** Score Panel ****/
+
 .star {
     width: 25px;
 }
@@ -110,6 +109,8 @@ body {
     cursor: pointer;
 }
 
+/**** Modal ****/
+
 .congrats-modal {
     visibility: hidden;
     position: absolute;
@@ -127,9 +128,9 @@ body {
     position: absolute;
     margin: auto;
     padding: 20px;
-    width: 60%;
-    height: 60%;
-    background-color: #fff;
+    width: 50%;
+    height: 50%;
+    background-color: seashell;
     text-align: center;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -138,7 +139,7 @@ body {
 
 .modal-close {
     float: right;
-    font-size: 2em;
+    font-size: 1.5em;
 
 }
 
@@ -147,10 +148,27 @@ body {
     display: inline-block;
 }
 
+button {
+    background-color: #BFB09F;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+/**** Responsive ****/
 
 img {
     max-width: 100%;
 }
+
 @media screen and (max-width: 650px) {
     #game-board {
         width: 100%;
