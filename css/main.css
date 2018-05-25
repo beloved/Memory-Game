@@ -112,6 +112,9 @@ body {
 /**** Modal ****/
 
 .congrats-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     visibility: hidden;
     position: absolute;
     padding: 20%;
@@ -170,12 +173,17 @@ img {
 }
 
 @media screen and (max-width: 650px) {
+    #container {
+        height: auto;
+    }
     #game-board {
         width: 100%;
+
     }
 
     .game-card {
         width: 25%;
+        height: 25%;
     }
 
 }
